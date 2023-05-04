@@ -1,11 +1,16 @@
-import { useState } from "react";
+import { useState,StrictMode } from "react";
 import "./App.css";
 import { Canvas } from "@react-three/fiber";
 import Experience from "./Experience";
 import Experience1 from "./Experience1";
 import * as THREE from "three";
 import Walls from "./Walls";
+import Scene from "./Scene";
 
+
+// const created=({scene})=>{
+// scene.background = new THREE.Color("#ff0000 ")
+// }
 function App() {
   const [count, setCount] = useState(0);
   const cameraSettings = {
@@ -16,19 +21,12 @@ function App() {
     position: [3, 2, 6],
   };
   return (
-    <>
-      <Canvas
-        // flat
-        // linear
-        // orthographic
-        camera={{
-          fov: 80,
-          far: 1000,
-          position: [500, 500, 500]
-        }}
+    <>  
+      <Canvas shadows
       >
-        <Walls />
+        <Scene/>
       </Canvas>
+
     </>
   );
 }
