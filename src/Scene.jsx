@@ -12,14 +12,14 @@ const Scene = () => {
 
   useEffect(() => {
     camera.position.x = 18
-    camera.position.y = 5
-    camera.position.z = 20
+    camera.position.y = 7
+    camera.position.z = 17
   }, [])
 
   return (
     <group>
       <mesh rotation={[Math.PI / 2, 0, 0]}>
-        <boxBufferGeometry args={[100, 100, 1]} />
+        <boxBufferGeometry args={[1000, 1000, 1]} />
         <meshStandardMaterial color={"lightgray"} />
       </mesh>
       <mesh rotation={[Math.PI / 2, 0, 0]} position={[0,2,0]}>

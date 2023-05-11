@@ -68,6 +68,8 @@ export default function Experience(props) {
   const stairs_railing = useLoader(GLTFLoader, "./stair_railing.glb");
 
   const receptionDesk = useLoader(GLTFLoader, "./reception_desk_01.glb");
+  // const herryPotter = useLoader(GLTFLoader, "./ready_player_me_harry_potter.glb");
+
 
   const c1 = useRef();
   const c2 = useRef();
@@ -94,7 +96,7 @@ export default function Experience(props) {
       <directionalLight ref={directionalLight} position={[-50, 50, -10]} intensity={1.5}  />
       <ambientLight intensity={0.5} />
 
-      <OrbitControls args={[camera, gl.domElement]} makeDefault />
+      <OrbitControls args={[camera, gl.domElement]}  maxPolarAngle ={Math.PI * 0.48}/>
       <group ref={groupRef}>
         <mesh position={[199.4, 134.5, 0]}>
           <boxGeometry args={[1.5, 30, 300]} />
@@ -264,7 +266,15 @@ export default function Experience(props) {
       <ambientLight></ambientLight>
       {/* <TransformControls object={c1} /> */}
       {/* <ContactShadows  position={ [ 0, - 0.99, 0 ] }/> */}
-<Sky/>
+
+      {/* <primitive
+        object={herryPotter.scene.clone()}
+        // scale={[1000, 1000, 1000]}
+        position={[300, 41, 90]}
+
+        rotation={[0, 0, 0]}
+      ></primitive> */}
+{/* <Sky/> */}
     </group>
   );
 }
